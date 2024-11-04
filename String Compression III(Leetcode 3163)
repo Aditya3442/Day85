@@ -1,0 +1,18 @@
+class Solution {
+
+    public String compressedString(String word) {
+        StringBuilder sb = new StringBuilder("");
+        int pos = 0;
+        while (pos < word.length()) {
+            int count = 0;
+            char ch = word.charAt(pos);
+            while (pos < word.length() && count< 9 &&word.charAt(pos) ==ch){
+                count++;
+                pos++;
+            }
+            sb.append(count).append(ch);
+        }
+
+        return sb.toString();
+    }
+}
